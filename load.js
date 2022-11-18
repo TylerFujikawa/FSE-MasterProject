@@ -1,3 +1,5 @@
+let timerText
+
 function loadExercise1(){
   exerciseName = "Circles"
   loadExerciseOverlay()
@@ -75,7 +77,7 @@ function loadMainMenu(){
   //Title
   textSize(32)
   textAlign(CENTER, CENTER);
-  text('App Name',200,50)
+  text('Trainer',200,50)
   
   //Subtitle
   textSize(12)
