@@ -1,5 +1,3 @@
-let timerText
-
 function loadExercise1(){
   exerciseName = "Circles"
   loadExerciseOverlay()
