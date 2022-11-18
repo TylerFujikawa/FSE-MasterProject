@@ -1,9 +1,10 @@
 //vars
 let mainMenu = true
-let currentExercise = null
 
 //Data vars
-let scores
+let circleData = []
+let typingData = []
+let wiresData = []
 
 //Images
 let circles
@@ -19,6 +20,7 @@ let dataMenuButton
 
 //Exercises
 let exerciseName = "Circles"
+let exerciseChoice = null //1 is circles, 2 is typing, 3 is wires
 
 function setup() {
   createCanvas(400, 400)
@@ -44,8 +46,19 @@ function preload(){
 }
 function draw() {
   //Default exercise screen
-  if(currentExercise != null){
+  cMousePos = new Vector(mouseX,mouseY)
     //show the exercises
+  if(exerciseChoice == 3){
+    if(activeTimer){
+      fill("white")
+      rect(220,70,60,20)
+      fill("black")
+      textSize(16)
+      text("Time: " + timer, 250, 80)
+      if (frameCount % 60 == 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+        timer ++;
+      }
+    }
   }
 }
 
@@ -53,8 +66,15 @@ function clearCanvas(){
   canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
 }
 function getRandX(){
-  return floor(random(105, 395))//exact so it doesnt go on lines
+  return floor(random(110, 390))//exact so it doesnt go on lines
 }
 function getRandY(){
-  return floor(random(105, 395))
+  return floor(random(110, 390))
+}
+
+class Vector{
+  constructor(x, y){
+    this.x = x;
+    this.y = y;
+  } 
 }
