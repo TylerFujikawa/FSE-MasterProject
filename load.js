@@ -11,6 +11,7 @@ function loadExercise2(){
   circleExerciseButton.show()
   typingExerciseButton.hide()
   wiresExerciseButton.show()
+  typingExercise()
 }
 function loadExercise3(){
   exerciseName = "Wires"
