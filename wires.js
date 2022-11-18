@@ -8,7 +8,6 @@ let activeTimer = false
 let timer = 0
 
 function wiresExercise(){
-  //setup the locations of circles
   exerciseChoice = 3
   noStroke()
   pairs.push(new Pair('red', 1))
@@ -18,8 +17,6 @@ function wiresExercise(){
 }
 
 function mousePressed(){
-  //if mouse location is less than 15 above or below and
-  //less than 15 left or right, then it
   if(exerciseChoice == 3){
     mousePos = new Vector(mouseX,mouseY)
     for(let i = 0; i < pairs.length;i++){
