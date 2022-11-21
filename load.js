@@ -4,6 +4,7 @@ function loadExercise1(){
   circleExerciseButton.hide()
   typingExerciseButton.show()
   wiresExerciseButton.show()
+  circlesExercise()
 }
 function loadExercise2(){
   exerciseName = "Typing"
@@ -41,6 +42,9 @@ function loadExerciseOverlay(){
   typingExerciseButton.position(20,200)
   wiresExerciseButton.position(20,275)
   dataMenuButton.position(10,355)
+  replayButton.position(16, 320).show()
+  
+  resetTimer()
 }
 
 function loadDataMenu(){
@@ -51,6 +55,11 @@ function loadDataMenu(){
   typingExerciseButton.position(25,150).show()
   wiresExerciseButton.position(25,250).show()
   dataMenuButton.position(160,325).hide()
+  replayButton.hide()
+  
+  exerciseChoice = 0
+  
+  resetTimer()
   
   //border
   strokeWeight(5)
@@ -68,6 +77,9 @@ function loadMainMenu(){
   typingExerciseButton.position(175,230).show()
   wiresExerciseButton.position(325,230).show()
   dataMenuButton.position(160,325).show()
+  replayButton.hide()
+  
+  resetTimer()
   
   //border
   strokeWeight(10)
