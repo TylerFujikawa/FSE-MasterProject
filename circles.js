@@ -1,6 +1,6 @@
 const defaultSpeed = 1
-const speedIncrement = 1
-const circleDiameter = 15
+const speedIncrement = .75
+const circleDiameter = 30
 const pointCheckDistance = 5
 const hitBuffer = 1
 let cSpeed = defaultSpeed
@@ -54,8 +54,9 @@ function checkClick(){
 function circlesReset(){
   drawCircle = false
   clearArea()
-  circlesData.push(timer)
+  //circlesData.push(timer)
   resetTimer()
   timer = 0
   cSpeed = defaultSpeed
+  currentCircle = 0
 }
