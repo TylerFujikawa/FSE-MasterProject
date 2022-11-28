@@ -62,9 +62,12 @@ function setup() {
 }
 function preload(){
   //load images
-  circles = "circles.png"
-  typing = "typing.png"
-  wires = "wire.png"
+  soundFormats('mp3', 'ogg', 'wav')
+  outputVolume(.4)
+  hitTargetSound = loadSound('hitTarget.wav')
+  connectWireSound = loadSound('connectWire.wav')
+  wrongEnterSound = loadSound('wrongEnter.wav')
+  winGameSound = loadSound('winGame.wav')
 }
 function draw() {
   mousePos = new Vector(mouseX, mouseY)
