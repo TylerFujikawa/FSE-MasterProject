@@ -48,10 +48,13 @@ function checkClick(){
     newCircle()
     if(currentCircle == 5){
       circlesReset()
+    }else{
+      hitTargetSound.play()
     }
   }
 }
 function circlesReset(){
+  winGameSound.play()
   drawCircle = false
   clearArea()
   //circlesData.push(timer)
