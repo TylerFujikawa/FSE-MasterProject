@@ -1,5 +1,5 @@
 //Wires
-let shapeSizeDiameter = 15
+let shapeSizeDiameter = 20
 let pairs = []
 let startPos
 let endPos
@@ -10,11 +10,13 @@ let timer = 0
 function wiresExercise(){
   //setup the locations of circles
   exerciseChoice = 3
+  push()
   noStroke()
   pairs.push(new Pair('red', 1))
   pairs.push(new Pair('green', 2))
   pairs.push(new Pair('blue', 3))
   activeTimer = true
+  pop()
 }
   
 function checkFinished(){
@@ -23,7 +25,7 @@ function checkFinished(){
       return
     }
   }
-  wiresData.push(timer)
+  pairs = []
   resetTimer()
 }
 
@@ -34,10 +36,12 @@ class Pair{
     this.firstCircle = new Vector(getRandX(),getRandY())
     this.secondCircle = new Vector(getRandX(),getRandY())
     this.colorChoice = colorChoice
+    push()
     fill(this.colorChoice)
     this.c1 = circle(this.firstCircle.x,this.firstCircle.y,shapeSizeDiameter)
     this.c2 = circle(this.secondCircle.x,this.secondCircle.y,shapeSizeDiameter)
     this.active = 0 //0 is none, 1 is first, 2 is second
+    pop()
   }
   checkValid(){
     if(activeWire == 0 || activeWire == this.id){
@@ -69,7 +73,15 @@ class Pair{
   }
   endLine(){
     push()
+    noStroke()
+    fill(this.colorChoice)
+    this.c1 = circle(this.firstCircle.x,this.firstCircle.y,shapeSizeDiameter)
+    this.c2 = circle(this.secondCircle.x,this.secondCircle.y,shapeSizeDiameter)
+    this.active = 0 //0 is none, 1 is first, 2 is second
+    pop()
+    push()
     stroke(this.colorChoice)
+    strokeWeight(5)
     line(this.firstCircle.x, this.firstCircle.y, this.secondCircle.x, this.secondCircle.y)
     pop()
     activeWire = 0;
