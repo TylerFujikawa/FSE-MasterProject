@@ -35,9 +35,11 @@ function enter(){
   if(neededSentence === textInput.value()){
     setReturnStatement("CORRECT", 1)
     enterButton.hide()
+    winGameSound.play()
     resetTimer()
   }else{
     setReturnStatement("WRONG", 2)
+    wrongEnterSound.play()
   }
 }
 function setReturnStatement(val, colo){
