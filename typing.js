@@ -1,19 +1,61 @@
+let exampleText1 = "Type the following sentence:"
+let exampleText2 = "the quick brown fox jumps over the lazy dog"
+
+
+let neededSentence = "the quick brown fox jumps over the lazy dog";
+let returnStatement = "FAIL";
+let returnColor;
+
 function typingExercise(){
-  //variables
-  let neededSentence = "The quick brown fox jumps over the lazy dog";
-  let returnStatement = "";
-  let returnColor;
-  //Gather response
-  var response = prompt("Type the following sentence:\nThe quick brown fox jumps over the lazy dog")
-  var pass = neededSentence.localeCompare(response)
-  if(pass == 0){
-    returnStatement = "SUCCESS";
-    return true;
-  }
-  else{
-    returnStatement = "FAILURE";
-    return false;
-  }
-  textSize(25)
+  exerciseChoice = 2
+  activeTimer = true
+  textInput.value("")
+  
+  textInput.show()
+  textInput.position(295, 390)
+  textInput.style('height', "60px")
+  textInput.style('width', "200px")
+  textInput.style('padding', "6px 10px")
+  textInput.style('font-size', "17px")
+  textInput.style('rows', "10")
+  textInput.style('cols', "100")
+  textInput.style('textAlign', 'center')
+  
+  enterButton.show().position(370, 470)
+  
+  push()
+  textSize(30)
   textAlign(CENTER, CENTER);
+  text(exampleText1, 250, 250, 300)
+  textSize(18)
+  text(exampleText2, 300, 330, 200)
+  pop()
+}
+function enter(){
+  if(neededSentence === textInput.value()){
+    setReturnStatement("CORRECT", 1)
+    enterButton.hide()
+    resetTimer()
+  }else{
+    setReturnStatement("WRONG", 2)
+  }
+}
+function setReturnStatement(val, colo){
+  let color1
+  push()
+  stroke('white')
+  fill('white')
+  rect(340, 525, 120, 50)
+  pop()
+  push()
+  textSize(25)
+  textAlign(CENTER, CENTER)
+  if(colo == 1){
+    color1 = "green"
+  }else{
+    color1 = "red"
+  }
+  fill(color1)
+  text(val, 400, 550)
+  pop()
 }
