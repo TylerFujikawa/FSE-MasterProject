@@ -26,6 +26,7 @@ function checkFinished(){
     }
   }
   pairs = []
+  winGameSound.play()
   resetTimer()
 }
 
@@ -72,6 +73,7 @@ class Pair{
     return false
   }
   endLine(){
+    connectWireSound.play()
     push()
     noStroke()
     fill(this.colorChoice)
